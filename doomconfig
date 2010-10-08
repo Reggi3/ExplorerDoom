@@ -1,0 +1,37 @@
+mouse_sensitivity		4
+sfx_volume		15
+music_volume		15
+show_messages		1
+key_right		174
+key_left		172
+key_up		173
+key_down		175
+key_strafeleft		108
+key_straferight		114
+key_fire		97
+key_use		98
+key_strafe		184
+key_speed		999
+use_mouse		1
+mouseb_fire		0
+mouseb_strafe		1
+mouseb_forward		2
+use_joystick		0
+joyb_fire		0
+joyb_strafe		1
+joyb_use		3
+joyb_speed		2
+screenblocks		10
+detaillevel		0
+snd_channels		3
+usegamma		0
+chatmacro0		"No"
+chatmacro1		"I'm ready to kick butt!"
+chatmacro2		"I'm OK."
+chatmacro3		"I'm not looking too good!"
+chatmacro4		"Help!"
+chatmacro5		"You suck!"
+chatmacro6		"Next time, scumbag..."
+chatmacro7		"Come here!"
+chatmacro8		"I'll take care of it."
+chatmacro9		"Yes"

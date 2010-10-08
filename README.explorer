@@ -1,0 +1,69 @@
+README
+
+SDLDoom for the Leapfrog Explorer and Leapfrog Didj consoles.
+
+REQUIREMENTS:
+
+This port requires a working leapfrog explorer kernel(2.6.31) with framebuffer driver built in, you will need to edit lf1000fb.h and change #define BYTESPP = 3 to #define BYTESPP 4
+
+It also requires libSDL version 1.2, you can find information how to build you own kernel with the framebuffer driver, crosscompiler and any extra libs at http://elinux.org/Leapster_Explorer
+
+usage:
+
+As the keys on the didj/explorer are a bit limited I have been forced to write extra code to handle the buttons, we've pretty much got everything sorted but I'll probably change the code a little bit more to tweak things a bit.
+
+There should a a file called doomconfig in your archive, copy it and the doom wad to a folder on your didj/lx,
+/LF/Bulk/doom would be ok for the explorer, /Didj/doom for the didj.  Run doom with the following command:
+doom -config ./doomconfig
+
+'''Keys'''
+
+I will give the explorer key and the keyboard key that it translates to.  You could probably plug a usb keyboard into the explorer and use that instead, you'll need to know the button mappings to use the menu system at least.
+
+'''In Menus'''
+
+Home button(m) - Enter key (select menu item/start game etc.)
+Brightness button(x) - Escape key (Exit or backup menu)
+Pause button(p) - lowercase p (use instead of 'y' when quitting)
+Left shoulder(l) - lowercase l (moves cursor to load game menu item in main menu)
+Right shoulder(l) - lowercase r (moves cursor to Read This! menu item in main menu)
+Dpad Up/Down/Left/Right are numpad arrow keys (use to navigate menus and change volume etc)
+
+'''In Game'''
+home - pause menu
+
+'''Movement'''
+dpad up/down - move forward/backwards
+left/right - turn left/right
+left shoulder - strafe left
+right shoulder - strafe right
+
+'''Action'''
+A button(a) - lowercase a (fire)
+B button(b) - lowercase b (use)
+? button(h) - lowercase h (cycle weapon) 
+Pause button(p) - Tab Key (Map)
+
+'''Mouse'''
+If the touchscreen works don't expect it to do much, you can tap the screen to fire but movement is untested.
+It might not work at all depending on your configuration.
+
+'''Tips'''
+Tip 1.: if you start doom with the -devparm switch you can take a screenshot with Volume Up button
+Tip 2.: Volume buttons work in all screens, they still change overall system volume as they are captured in the lf1000 drivers long before sdldoom gets a sniff of them.
+
+
+To Do:
+See if music is supposed to work and how to get it going
+tweak button config
+get touchscreen to work, currently it does work poorly depending on your configuration
+
+
+Changes from SDLDoom source 1.10:
+
+Changed char forwardmove and char sidemove to ints (fixed strafe left and move backwards issues)
+Changed the values that SDLDoom expects to see for Enter and Escape to x and m respectively
+Added code for weapon cycling using ? button (h)
+Added code to pickup volume up/down unknown keys and bypass SDLDoom key translation routine, moved screenshot key to volume up button
+Changed code to use pause button(p) as 'y' in y/n confirmation screens (exit game menu items)
+Adjusted SAMPLERATE from 11025 to 44100 so that the sound is a bit nicer
